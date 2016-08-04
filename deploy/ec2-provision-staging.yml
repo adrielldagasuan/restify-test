@@ -8,14 +8,14 @@
       aws_access_key: "{{lookup('env','ACCESS_ID')}}"
       aws_secret_key: "{{lookup('env','ACCESS_KEY')}}"
       region: ap-northeast-1
-      image: ami-a21529cc
+      image: ami-2b08f44a
       instance_type: t2.micro
       key_name: ansible-key-pair
       count: 2
       state: present
       wait: no
       instance_tags:
-        Name: restify
+        Name: staging
     register: ec2info
   - name: Print the results
     debug: var=ec2info
