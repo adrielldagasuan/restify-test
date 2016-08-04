@@ -11,7 +11,7 @@
       image: ami-2b08f44a
       instance_type: t2.micro
       key_name: ansible-key-pair
-      count: 2
+      exact_count: 1
       state: present
       wait: no
       instance_tags:

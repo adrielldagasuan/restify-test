@@ -32,10 +32,14 @@ deployment:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push adrielldagasuan/restify-test
       # provision EC2 instance
-      - echo "Provisioning EC2 Instance"
-      - ansible-playbook -i deploy/hosts deploy/ec2-provision-staging.yml
+      # - echo "Provisioning EC2 Instance"
+      # - ansible-playbook -i deploy/hosts deploy/ec2-provision-staging.yml
       # deploy tester-app
   production:
     branch: master
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+
+notify:
+  webhooks:
+    - url: https://54.197.16.151:9200/circleci/new_events
