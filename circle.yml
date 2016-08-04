@@ -8,6 +8,7 @@ dependencies:
   pre:
     - pip install ansible
     - pip install boto
+    - pip install boto3
     - cd /etc
     - sudo mkdir ansible
     - cd ansible
