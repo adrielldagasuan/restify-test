@@ -17,5 +17,5 @@
       "cpu": 10
     }
   ],
-  "family": "hello_world"
+  "family": "staging-docker-node-cluster"
 }
