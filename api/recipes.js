@@ -8,6 +8,7 @@ var recipes = {};
 // Functions
 recipes.selectAll = function (req, res, next){
   db.collection('recipes').find(function(err, recipes){
+    console.log(recipes);
     if (err){
       console.log('error');
       throw err;
@@ -50,6 +51,7 @@ recipes.update = function (req, res, next){
 };
 
 recipes.insert = function (req, res, next){
+  console.log(req.body);
   db.collection('recipes').insert(req.body);
   res.send(201,'Insert successful');
   return next();
