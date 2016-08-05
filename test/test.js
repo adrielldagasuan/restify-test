@@ -9,26 +9,22 @@ chai.use(chaiHttp);
 
 describe("returns recipes", function(){
   it("returns recipes", function(done) {
-    "use strict";
+
     chai.request(baseUrl)
         .get('/recipes')
         .end(function (error, response, body){
           response.should.have.status(200);
-        });
+        })
     done();
   });
 });
 
 describe("adds new recipe",function(){
   it("adds new recipe", function(done){
-    "use strict";
-    let recipe = {
-       name : "Pinakbet",
-       ingredients : ["Ampalaya","Eggplant","Squash","Okra","Bagoong"]
-    };
+
     chai.request(baseUrl)
         .post('/recipes')
-        .send(recipe)
+        .send({name:"Recipe1",ingredients:["ingredient1","ingredient2","ingredient3"]})
         .end(function(error, response, body){
           res.should.have.status(201);
         });
