@@ -22,7 +22,7 @@ dependencies:
 test:
   override:
     # run test scripts for unit/integration/functional
-    - npm test
+    - cd app && npm test
 
 deployment:
   staging:
