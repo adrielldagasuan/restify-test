@@ -16,6 +16,7 @@ dependencies:
     # - cp ~/restify-test/deploy/hosts/ec2.ini /etc/ansible/
   override:
     - docker build --no-cache -t adrielldagasuan/restify-test .
+    - npm set registry https://registry.npmjs.org/
     - npm install
 
 test:
