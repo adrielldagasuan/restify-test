@@ -34,11 +34,11 @@ deployment:
     commands:
       # push to docker hub
       # - echo "Pushing Docker image to Docker Hub"
-      # - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      # - docker push adrielldagasuan/restify-test
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push adrielldagasuan/restify-test
       # provision EC2 instance
-      # - echo "Provisioning EC2 Instance"
-      # - ansible-playbook deploy/ec2-cloudformation.yml
+      - echo "Provisioning EC2 Instance"
+      - ansible-playbook deploy/ec2-cloudformation.yml
       # deploy tester-app
   production:
     branch: master
