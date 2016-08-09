@@ -253,8 +253,14 @@
           [
             { "IpProtocol" : "tcp", "FromPort" : { "Ref" : "EcsPort" }, "ToPort" : { "Ref" : "EcsPort" },
               "CidrIp" : { "Ref" : "SourceCidr" } },
-              { "IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22",
-                "CidrIp" : "0.0.0.0/0" },
+            { "IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22",
+              "CidrIp" : "0.0.0.0/0" },
+            { "IpProtocol" : "tcp", "FromPort" : "6783", "ToPort" : "6783",
+              "CidrIp" : "0.0.0.0/0" },
+            { "IpProtocol" : "tcp", "FromPort" : "2375", "ToPort" : "2375",
+              "CidrIp" : "0.0.0.0/0" },
+            { "IpProtocol" : "udp", "FromPort" : "6783", "ToPort" : "6783",
+              "CidrIp" : "0.0.0.0/0" },
             { "IpProtocol" : "tcp", "FromPort" : "1", "ToPort" : "65535", "SourceSecurityGroupId" :  { "Ref" : "ElbSecurityGroup" } }
           ],
           [
@@ -262,6 +268,12 @@
               "CidrIp" : { "Ref" : "SourceCidr" } },
             { "IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22",
                 "CidrIp" : "0.0.0.0/0" }
+            { "IpProtocol" : "tcp", "FromPort" : "6783", "ToPort" : "6783",
+              "CidrIp" : "0.0.0.0/0" },
+            { "IpProtocol" : "tcp", "FromPort" : "2375", "ToPort" : "2375",
+              "CidrIp" : "0.0.0.0/0" },
+            { "IpProtocol" : "udp", "FromPort" : "6783", "ToPort" : "6783",
+              "CidrIp" : "0.0.0.0/0" }
           ]
         ] }
       }
