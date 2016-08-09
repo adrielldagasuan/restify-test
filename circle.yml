@@ -6,7 +6,9 @@ machine:
 
 dependencies:
   pre:
+    # install Ansible for deployment
     - pip install ansible
+    # install boto/boto3 needed by AWS Ansible modules
     - pip install boto
     - pip install boto3
     - cd /etc
@@ -15,7 +17,9 @@ dependencies:
     - sudo mkdir hosts
     # - cp ~/restify-test/deploy/hosts/ec2.ini /etc/ansible/
   override:
+    # set NPM registry
     - npm set registry https://registry.npmjs.org/
+    # build image
     - docker build --no-cache -f app/Dockerfile -t adrielldagasuan/restify-test .
     - cd app && npm install
 
@@ -33,8 +37,8 @@ deployment:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push adrielldagasuan/restify-test
       # provision EC2 instance
-      # - echo "Provisioning EC2 Instance"
-      # - ansible-playbook deploy/ec2-cloudformation.yml
+      - echo "Provisioning EC2 Instance"
+      - ansible-playbook deploy/ec2-cloudformation.yml
       # deploy tester-app
   production:
     branch: master
