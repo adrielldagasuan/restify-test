@@ -59,6 +59,6 @@
       aws_secret_key: "{{lookup('env','ACCESS_KEY')}}"
       state: present
       name: docker-node-service
-      desired_count : 1
+      desired_count : 2
       cluster: docker-node-cluster
       task_definition: docker-node-family
