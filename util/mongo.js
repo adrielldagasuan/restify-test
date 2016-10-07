@@ -1,6 +1,6 @@
 var mongojs = require('mongojs');
 
-var db = mongojs('mongodb://admin:password@ds031925.mlab.com:31925/recipesdb');
+var db = mongojs('yourmongodbhere');
 
 // Export collections
 module.exports = db;
